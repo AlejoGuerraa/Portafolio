@@ -1,0 +1,227 @@
+
+Necesito que arregles el portafolio, quedó horrible.
+Vamos por pasos,
+Cosas a tener en cuenta:
+- Podes usar react y lo que quieras, todo mientras despues funcione.
+- En la carpeta "imports" tenes todos mis diseños de wireframe que le pase anteriormente a figma para que me haga el portafolio, junto con el prompt.
+- Todo tiene que quedar responsive
+- Incluí animaciones suaves
+- Reemplaza todos los iconos por iconos de lucide react, en color blanco y brillantes si pasas el mouse por encima.
+
+------------------------------------------------------------------------------------------------------------------------
+
+Header:
+- El header tiene que ser sticky, osea se tiene que pegar a la parte de arriba cuando el usuario baja por el proyecto.
+- Se tiene que ir subrayando e iluminando el titulo mediante voy bajando por cada sección.
+- Borra el logo ese que dice "AG", y centra todos los titulos a lo largo del header.
+
+------------------------------------------------------------------------------------------------------------------------
+
+Parte hero:
+- La foto quedó mal puesta, te adjunte en assets/images/ la foto que tenes que usar, tiene que quedar la parte de arriba "salida" del marco circular.
+- Los iconos de aplicaciones quedaron horribles, cambialos por lucide react.
+- Hace que el boton "descargar cv" funcione, coloque mi CV en assets/docs/
+- Colocá el boton al lado de los iconos de redes sociales.
+
+------------------------------------------------------------------------------------------------------------------------
+
+Parte Tecnologías (Aca ponele mucho enfasis porque es el mayor problema):
+Quiero crear una sección “Tech Stack” para mi portafolio web con una estética futurista tipo sistema solar. La sección debe estar hecha en React y tener animaciones suaves y profesionales.
+
+OBJETIVO GENERAL:
+Las tecnologías deben simular planetas orbitando alrededor de un núcleo central. En el centro debe haber un icono de programación estilo "</>" o algo minimalista relacionado al desarrollo.
+
+ESTRUCTURA:
+Debe haber 3 anillos (órbitas) alrededor del centro:
+
+1. Primer anillo → Backend
+Tecnologías:
+- Node.js
+- Express
+- MySQL
+- Sequelize
+
+2. Segundo anillo → Frontend
+Tecnologías:
+- HTML
+- CSS
+- React
+- Figma
+
+3. Tercer anillo → Lenguajes
+Tecnologías:
+- C
+- JavaScript
+- C#
+- Java
+- Python
+
+REQUISITOS VISUALES:
+- Cada tecnología debe usar su icono oficial.
+- Los iconos deben girar alrededor del centro simulando órbitas.
+- IMPORTANTE: los iconos NO deben girar sobre sí mismos; deben mantenerse derechos mientras orbitan.
+- Cada anillo debe tener una velocidad distinta:
+  - Backend → más rápido
+  - Frontend → medio
+  - Lenguajes → más lento
+- Los anillos deben verse como líneas finas y elegantes.
+- Fondo oscuro/futurista con glow suave.
+- Estética minimalista y moderna.
+- Debe ser responsive.
+
+INTERACCIONES:
+Al pasar el mouse sobre una tecnología:
+- Mostrar una tarjeta flotante (tooltip/card).
+- La tarjeta debe incluir:
+  - Nombre de la tecnología
+  - Nivel/progreso
+  - Proyecto donde fue usada
+  - Botón o link al proyecto
+
+DATOS:
+Backend
+- Express → 80% → usado en NextRead
+- MySQL → 80% → usado en TuBuffet
+- Node.js → 40% → usado en KnowBeat
+- Sequelize → 65% → usado en CampuScore
+
+Frontend
+- HTML → 85% → usado en NextRead
+- CSS → 60% → usado en NextRead
+- Figma → 70% → usado en KnowBeat
+- React → 80% → usado en TuBuffet
+
+Lenguajes
+- C → 50% → no implementado
+- Java → 70% → usado en IPVision
+- JavaScript → 75% → usado en NextRead
+- Python → 75% → usado en Chat-bot
+- C# → 40% → no implementado
+
+DETALLES TÉCNICOS:
+- Usar React.
+- Preferentemente usar Framer Motion para animaciones.
+- Usar react-icons o simple-icons para los logos.
+- Mantener el código limpio y modular.
+- Crear componentes separados:
+  - SolarSystem
+  - Orbit
+  - TechPlanet
+  - TooltipCard
+- Las posiciones de los iconos deben calcularse de forma circular.
+- Agregar efectos glow suaves a los iconos.
+- Las cards deben tener animaciones suaves al aparecer.
+
+EXTRA:
+- Agregar pequeñas partículas o estrellas de fondo.
+- El centro puede tener un glow animado.
+- Las órbitas deben sentirse “vivas” pero sin sobrecargar la interfaz.
+- Priorizar una estética profesional y moderna, no caricaturesca.
+
+Mas abajo, en "Otras tecnologías, pone una sección con los iconos de esas tecnologias, que son Unity, Paquete office, Canva y git. 
+(en el paquete office podes poner los iconos de las aplicaciones mas conocidas de office).
+
+** Las tecnologias tienen que ser los iconos de esas tecnologias, no la palabra.
+** Si ves que esto es imposible, busca otra forma de mostrarlos que quede muy bien pero sin que sea tipica.
+
+------------------------------------------------------------------------------------------------------------------------
+
+Sección de proyectos:
+Cada proyecto tiene que ser una card individual, con la foto portada, una descripción chiquita y 2 botones, uno que sea "Visitar" y otro que sea el icono de github, que lleve al repo.
+Cada vez que pases el mouse sobre un proyecto, se tiene que iluminar la parte de atras y agrandar, osea que quede fachero.
+Cuando se clickea sobre una card, se tiene que desplegar una tarjeta grande en medio de la pantalla, que va a mostrar el proyecto mas detallado.
+El fondo de la pagina se tiene que desenfocar un poco.
+La tarjeta contiene:
+- Carrousel de imagenes del proyecto
+- Titulo, mejor descripción
+- Iconos de tecnologias utilizadas
+- Participantes
+- Duración
+
+Info de cada proyecto:
+
+Aquanova:
+- Descripción corta (vista previa): Pagina web que muestra el catalogo de un servicio de domotización y construcción de piletas.
+- Descripción larga (cuando clickeas una card): Pagina web hecha con react que muestra el servicio y catalogo de Aquanova, una marca que realiza presupuestos y construcciones de piletas, asi como su refaccionamiento y domotización.
+- Tecnologias utilizadas: Typescript, React, Figma, Css
+- Participantes: Alejo Guerra, Santino Martinez
+- Duración: Mayo - Junio (2026)
+- Repo de github: https://github.com/AlejoGuerraa/Aquanova
+- Link o deploy: aquanova-three.vercel.app
+
+Campuscore:
+- Descripción corta (vista previa): Proyecto escolar sobre gestión académica, que incorpora un sistema de cuidado de conejos como recompensas. 
+- Descripción larga (cuando clickeas una card): CampuScore es una plataforma académica que permite administrar alumnos, materias y calificaciones, incluyendo rankings, estadísticas y alertas automáticas. Como elemento distintivo, el proyecto añade un sistema experimental de conejos virtuales y logros basado en el desempeño de cada estudiante.
+- Tecnologias utilizadas: React, Css, mysql, express, sequelize, javascript
+- Participantes: Alejo Guerra
+- Duración: octubre - diciembre (2025)
+- Repo de github: https://github.com/AlejoGuerraa/CampuScore
+- Link o deploy: https://campuscore-gilt.vercel.app/
+
+Chatbot:
+- Descripción corta (vista previa): Asistente virtual interactivo, enfocado en la experimentación y aprendizaje de interfaces conversacionales.
+- Descripción larga (cuando clickeas una card): Chatbot web diseñado para responder de manera interactiva a distintos mensajes del usuario. Fue desarrollado con fines educativos dentro de Talento Tech, priorizando una estructura simple, clara y fácil de desplegar para explorar el funcionamiento de asistentes virtuales.
+- Tecnologias utilizadas: Python, Streamlit
+- Participantes: Alejo Guerra
+- Duración: marzo - julio (2025)
+- Repo de github: https://github.com/AlejoGuerraa/Chat-bot
+- Link o deploy: XXXXXXX
+
+IPVision:
+- Descripción corta (vista previa): Aplicacion que permite escanear rangos de IPs, verificar su estado, obtener información de host, PID y puertos abiertos
+- Descripción larga (cuando clickeas una card): Proyecto orientado al monitoreo y análisis de redes, combinando un scanner de IPs con un módulo similar a Netstat para visualizar conexiones activas, puertos, protocolos y procesos asociados. Incluye filtros, estadísticas y exportación de resultados.
+- Tecnologias utilizadas: Java
+- Participantes: Alejo Guerra
+- Duración: julio - agosto (2025)
+- Repo de github: https://github.com/AlejoGuerraa/IPVision
+- Link o deploy: Cambia el boton por "descargar", que descarga un archivo .jar (ubicado en assets/ejecutables/IPVision.jar)
+
+Knowbeat:
+- Descripción corta (vista previa): Plataforma social orientada al aprendizaje musical que combina clases, ejercicios prácticos y una comunidad interactiva para compartir contenido y experiencias.
+- Descripción larga (cuando clickeas una card): Sitio web educativo y social enfocado en la enseñanza musical, permitiendo a los usuarios aprender teoría y práctica mediante clases guiadas, ejercicios personalizados y seguimiento de progreso. Además, incorpora funciones de red social como publicaciones, mensajería, grupos y sistema de interacción entre usuarios para fomentar el aprendizaje colaborativo.
+- Tecnologias utilizadas: React, mongodb, mysql, javascript, express, figma
+- Participantes: Alejo Guerra, Renata Gallucci, Santino Martinez, Esteban Gonzalez
+- Duración: Abril - En proceso (2026)
+- Repo de github: https://github.com/Santino7537/Knowbeat
+- Link o deploy: No disponible 
+
+NextRead:
+- Descripción corta (vista previa): Plataforma social para lectores que permite descubrir libros, compartir reseñas e interactuar con otros usuarios mediante un sistema de comunidad y recomendaciones.
+- Descripción larga (cuando clickeas una card): Red social enfocada en la lectura, donde los usuarios pueden explorar libros, crear reseñas, organizar listas personalizadas y seguir a otros lectores. La plataforma incorpora notificaciones en tiempo real, perfiles personalizables y elementos de gamificación para generar una experiencia más dinámica e interactiva alrededor de los libros.
+- Tecnologias utilizadas: Css, React, Javascript, MySql, node, express
+- Participantes: Alejo Guerra, Renata Gallucci, Carolina Mendez, Sofia Power, Agustin Rivera
+- Duración: Julio - Noviembre (2026)
+- Repo de github: https://github.com/AlejoGuerraa/nextRead
+- Link o deploy: No disponible
+
+TuBuffet:
+- Descripción corta (vista previa): Aplicación escolar orientada a la gestión de pedidos en buffets, permitiendo realizar compras anticipadas y reducir filas durante los recreos
+- Descripción larga (cuando clickeas una card): Esta propuesta busca mejorar la organización de los comercios gastronomicos escolares mediante una plataforma de pedidos digitales. El sistema permite a los usuarios realizar compras desde el celular, mientras que padres y administradores pueden controlar gastos, pedidos, stock y ventas en tiempo real.
+- Tecnologias utilizadas: React, React native, sql, javascript, figma, express
+- Participantes: Alejo Guerra, Renata Gallucci
+- Duración: Abril - En proceso (2026)
+- Repo de github: https://github.com/Renaaa189/TuBuffet
+- Link o deploy: No disponible
+
+(Todas las fotos de cada proyecto se encuentran en assets/images/proyectos/nombre-proyecto)
+
+Cada nombre de los integrantes en los proyectos tiene que llevar a su perfil de github:
+Alejo Guerra - https://github.com/AlejoGuerraa
+Renata Gallucci - https://github.com/Renaaa189
+Santino Martinez - https://github.com/Santino7537
+Esteban Gonzalez - https://github.com/EstebanGonzalez20
+Carolina Mendez - https://github.com/caroMendezz
+Sofia Power - https://github.com/Sofipow-007
+Agustin Rivera - https://github.com/AgustinR55
+------------------------------------------------------------------------------------------------------------------------
+
+Seccion certificaciones:
+
+------------------------------------------------------------------------------------------------------------------------
+
+Sección contacto:
+
+------------------------------------------------------------------------------------------------------------------------
+
+Con respecto a que el proyecto este disponible estaticamente:
+yo voy a deployarlo en vercel en vez de github pages, asi que no te preocupes de usar lo que quieras.
