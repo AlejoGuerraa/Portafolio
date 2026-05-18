@@ -132,8 +132,11 @@ Cada vez que pases el mouse sobre un proyecto, se tiene que iluminar la parte de
 Cuando se clickea sobre una card, se tiene que desplegar una tarjeta grande en medio de la pantalla, que va a mostrar el proyecto mas detallado.
 El fondo de la pagina se tiene que desenfocar un poco.
 La tarjeta contiene:
-- Carrousel de imagenes del proyecto
-- Titulo, mejor descripción
+Panel izquierdo:
+- Carrousel de imagenes del proyecto 
+
+Panel derecho:
+- Titulo, descripción larga
 - Iconos de tecnologias utilizadas
 - Participantes
 - Duración
@@ -203,7 +206,8 @@ TuBuffet:
 - Repo de github: https://github.com/Renaaa189/TuBuffet
 - Link o deploy: No disponible
 
-(Todas las fotos de cada proyecto se encuentran en assets/images/proyectos/nombre-proyecto)
+- (Todas las fotos de cada proyecto se encuentran en assets/images/proyectos/nombre-proyecto)
+- Los que no esten disponibles, cuando se toque en "visitar", mostrar un popup que diga "En desarrollo, todavia no hay una vista previa"
 
 Cada nombre de los integrantes en los proyectos tiene que llevar a su perfil de github:
 Alejo Guerra - https://github.com/AlejoGuerraa
@@ -217,11 +221,110 @@ Agustin Rivera - https://github.com/AgustinR55
 
 Seccion certificaciones:
 
+La idea de esta sección es que sea un Carrousel infinito de cards que se mueva lento y solo, que vaya mostrando mis certificaciones.
+Cada card de certificación tiene que tener esta estructura:
+- Imagen del certificado.
+- Titulo del certificado.
+
+Cuando se pase el mouse por arriba de un certificado, se tiene que iluminar la parte de atras.
+
+Cuando se clickee sobre un certificado, se tiene que abrir un modal que muestre el certificado en profundidad, al igual que los proyectos.
+Este tiene que contener:
+Panel izquierdo:
+- Foto grande del certificado.
+
+Panel derecho:
+- Titulo del certificado
+- Empresa que lo otorgó.
+- Descripción (que se vió)
+- Duración (horas)
+- Tecnologias vistas en el curso (iconos)
+- ID del certificado (si tiene)
+
+Estos son los diferentes certificados con su info:
+
+Desarrollo web 1:
+- Titulo del certificado: Desarrollo web 1
+- Empresa que lo otorgó: Ministerio de educación de Buenos Aires.
+- Descripción (que se vió): Fundamentos de HTML y CSS aplicados al desarrollo de una landing page estilo e-commerce con diseño visual.
+- Duración (horas): 40
+- Tecnologias vistas en el curso (iconos): html, css
+- ID del certificado: No tiene
+
+Desarrollo web 2:
+- Titulo del certificado: Desarrollo web 2
+- Empresa que lo otorgó: Ministerio de educación de Buenos Aires.
+- Descripción (que se vió): Implementación de una interfaz de e-commerce utilizando HTML, CSS y JavaScript, incorporando estructura semántica, estilos responsive y funcionalidades dinámicas del lado del cliente
+- Duración (horas): 40
+- Tecnologias vistas en el curso (iconos): html, css, javascript, git, github.
+- ID del certificado: No tiene
+
+Desarrollo de videojuegos 3D:
+- Titulo del certificado: Desarrollo de videojuegos 3D con Unity
+- Empresa que lo otorgó: Ministerio de educación de Buenos Aires.
+- Descripción (que se vió): Desarrollo de videojuegos básicos en Unity 3D utilizando C#, trabajando con scripting, físicas, prefabs, colisiones, cámaras, interfaces y construcción de escenas interactivas
+- Duración (horas): 40
+- Tecnologias vistas en el curso (iconos): Unity
+- ID del certificado: No tiene
+
+Desarrollo de videojuegos 2D:
+- Titulo del certificado: Desarrollo de videojuegos 3D con Unity
+- Empresa que lo otorgó: Ministerio de educación de Buenos Aires.
+- Descripción (que se vió): Curso de desarrollo de videojuegos 2D con Unity y C#, enfocado en la creación de un clon de Flappy Bird utilizando físicas, GameObjects, scripts y sistemas básicos de juego
+- Duración (horas): 24
+- Tecnologias vistas en el curso (iconos): Unity
+- ID del certificado: No tiene
+
+Chatbot de python con IA:
+- Titulo del certificado: Inteligencia Artificial con Python
+- Empresa que lo otorgó: Ministerio de educación de Buenos Aires.
+- Descripción (que se vió): Desarrollo de un chatbot de Inteligencia Artificial con Python, Streamlit y APIs de modelos de lenguaje, aplicando lógica de programación, gestión de memoria y diseño de interfaces inter
+- Duración (horas): 40
+- Tecnologias vistas en el curso (iconos): python, streamlit, git, github
+- ID del certificado: No tiene
+
+Diseño UX/UI:
+- Titulo del certificado: Diseño UX/UI
+- Empresa que lo otorgó: Ministerio de educación de Buenos Aires.
+- Descripción (que se vió): Diseño de interfaces y experiencia de usuario con Figma y Canva, trabajando en prototipado, organización visual y diseño centrado en el usuario
+- Duración (horas): 40
+- Tecnologias vistas en el curso (iconos): Figma, canva
+- ID del certificado: No tiene.
+
+Master AI with Gemini:
+- Titulo del certificado: Master AI with Gemini.
+- Empresa que lo otorgó: Santander Open Academy
+- Descripción (que se vió): Introducción práctica a Inteligencia Artificial generativa, prompt engineering y uso de asistentes IA, aplicando técnicas de interacción eficiente, automatización y principios de IA responsable
+- Duración (horas): 2
+- Tecnologias vistas en el curso (iconos): Gemini
+- ID del certificado: OA-2026-0408002454340
+
+Computación cuántica:
+- Titulo del certificado: La sexta revolucíón - Computación cuántica.
+- Empresa que lo otorgó: Polis XXI
+- Descripción (que se vió): Certificación de participación en una charla sobre computación cuántica presentada por Oscar Mezzano, explorando fundamentos teóricos, potencial tecnológico y aplicaciones futuras de la computación cuántica
+- Duración (horas): 2
+- Tecnologias vistas en el curso (iconos): (Ninguna)
+- ID del certificado: No tiene
+
+Todos los certificados se encuentran en assets/images/certificados
+
+arriba del carrousel, tiene que haber un texto ("Ver todo") que si lo apretas, te lleva a una pagina aparte que te lista todos los certificados en una cuadricula.
+
 ------------------------------------------------------------------------------------------------------------------------
 
 Sección contacto:
 
+En esta sección quiero que el usuario pueda contactarme eficientemente. El diseño actual me gusta pero esta medio mal hecho.
+En la parte izquierda estaban mal los iconos, arreglalos y que quede icono - texto:
+(Icono Github) AlejoGuerraa
+(Icono Linkedin) Alejo Guerra
+(Icono Email) guerra.alejoet36@gmail.com
+En la parte derecha esta bien como está, pero necesito que quede funcional. Que el usuario sin estar logueado en google pueda mandarme un mail.
+A mi se me ocurre que puede ser que se me mande un mail a mi mismo, con el mail, nombre y texto del que mandó el mensaje en la pagina.
+Podes usar lo que quieras, incluso un backend simple si queres, pero pensa que va a estar en vercel, asi que no te excedas.
+
 ------------------------------------------------------------------------------------------------------------------------
 
 Con respecto a que el proyecto este disponible estaticamente:
-yo voy a deployarlo en vercel en vez de github pages, asi que no te preocupes de usar lo que quieras.
+Yo voy a deployarlo en vercel en vez de github pages, asi que no te preocupes de usar lo que quieras.

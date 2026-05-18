@@ -39,10 +39,15 @@ const projectData = {
 
 function toggleMobileNav() {
   mobileNav.classList.toggle('active');
+  menuToggle.classList.toggle('active');
+  const isExpanded = mobileNav.classList.contains('active');
+  menuToggle.setAttribute('aria-expanded', String(isExpanded));
 }
 
 function closeMobileNav() {
   mobileNav.classList.remove('active');
+  menuToggle.classList.remove('active');
+  menuToggle.setAttribute('aria-expanded', 'false');
 }
 
 function updateNavHighlight() {
@@ -51,14 +56,14 @@ function updateNavHighlight() {
     const top = section.offsetTop;
     const bottom = top + section.offsetHeight;
     const id = section.id;
-    const link = document.querySelector(`.nav-links a[href="#${id}"]`);
-    if (link) {
+    const links = document.querySelectorAll(`.nav-links a[href="#${id}"], .mobile-nav a[href="#${id}"]`);
+    links.forEach((link) => {
       if (scrollPosition >= top && scrollPosition < bottom) {
         link.classList.add('active');
       } else {
         link.classList.remove('active');
       }
-    }
+    });
   });
 }
 
