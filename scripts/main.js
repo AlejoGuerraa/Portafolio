@@ -82,18 +82,38 @@ function initSectionObserver() {
   document.querySelectorAll('.fade-in-up').forEach((element) => observer.observe(element));
 }
 
+function generateHighlightedCode() {
+  const codeLines = document.getElementById('code-lines');
+  
+  const htmlContent = [
+    { indent: 0, html: '<span class=\"tag-bracket\">&lt;</span><span class=\"tag\">section</span> <span class=\"attr-name\">className</span><span class=\"tag-bracket\">=\"</span><span class=\"attr-value\">about-me</span><span class=\"tag-bracket\">\"&gt;</span>' },
+    { indent: 1, html: '<span class=\"tag-bracket\">&lt;</span><span class=\"tag\">h2</span><span class=\"tag-bracket\">&gt;</span><span class=\"text-content\">Sobre mí</span><span class=\"tag-bracket\">&lt;/</span><span class=\"tag\">h2</span><span class=\"tag-bracket\">&gt;</span>' },
+    { indent: 1, html: '<span class=\"tag-bracket\">&lt;</span><span class=\"tag\">p</span><span class=\"tag-bracket\">&gt;</span>' },
+    { indent: 2, html: '<span class=\"text-content\">Hola, soy </span><span class=\"tag-bracket\">&lt;</span><span class=\"tag\">span</span> <span class=\"attr-name\">className</span><span class=\"tag-bracket\">=\"</span><span class=\"attr-value\">highlight</span><span class=\"tag-bracket\">\"&gt;</span><span class=\"highlight\">Alejo Guerra</span><span class=\"tag-bracket\">&lt;/</span><span class=\"tag\">span</span><span class=\"tag-bracket\">&gt;</span><span class=\"text-content\">.</span>' },
+    { indent: 2, html: '<span class=\"text-content\">Tengo 18 años y actualmente estudio Informática.</span>' },
+    { indent: 1, html: '<span class=\"tag-bracket\">&lt;/</span><span class=\"tag\">p</span><span class=\"tag-bracket\">&gt;</span>' },
+    { indent: 1, html: '<span class=\"tag-bracket\">&lt;</span><span class=\"tag\">ul</span><span class=\"tag-bracket\">&gt;</span>' },
+    { indent: 2, html: '<span class=\"tag-bracket\">&lt;</span><span class=\"tag\">li</span><span class=\"tag-bracket\">&gt;</span><span class=\"text-content\">Me gusta crear cosas, resolver problemas y</span>' },
+    { indent: 3, html: '<span class=\"text-content\">entender cómo funcionan los sistemas.</span><span class=\"tag-bracket\">&lt;/</span><span class=\"tag\">li</span><span class=\"tag-bracket\">&gt;</span>' },
+    { indent: 2, html: '<span class=\"tag-bracket\">&lt;</span><span class=\"tag\">li</span><span class=\"tag-bracket\">&gt;</span><span class=\"text-content\">Tengo interés en trabajar en proyectos que tengan</span>' },
+    { indent: 3, html: '<span class=\"text-content\">utilidad real y que representen un desafío.</span><span class=\"tag-bracket\">&lt;/</span><span class=\"tag\">li</span><span class=\"tag-bracket\">&gt;</span>' },
+    { indent: 1, html: '<span class=\"tag-bracket\">&lt;/</span><span class=\"tag\">ul</span><span class=\"tag-bracket\">&gt;</span>' },
+    { indent: 0, html: '<span class=\"tag-bracket\">&lt;/</span><span class=\"tag\">section</span><span class=\"tag-bracket\">&gt;</span>' }
+  ];
+
+  const indentStr = '&nbsp;&nbsp;&nbsp;&nbsp;';
+  
+  const codeHTML = htmlContent.map((line, idx) => {
+    const lineNum = idx + 1;
+    const indent = indentStr.repeat(line.indent);
+    return `<div class=\"code-line\"><span class=\"line-number\">${lineNum}</span><span class=\"line-content\">${indent}${line.html}</span></div>`;
+  }).join('');
+
+  codeLines.innerHTML = codeHTML;
+}
+
 function typeAboutCode() {
-  let index = 0;
-  const speed = 30;
-  function step() {
-    if (index < aboutText.length) {
-      codeTyping.textContent += aboutText[index];
-      index += 1;
-      setTimeout(step, speed);
-    }
-  }
-  codeTyping.textContent = '';
-  step();
+  generateHighlightedCode();
 }
 
 function showTechTooltip(event) {
