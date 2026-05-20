@@ -1,15 +1,19 @@
-import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { motion } from 'framer-motion'
 import { certifications } from '../data/certifications'
-import { CertificationModal } from './CertificationModal'
 import './Certifications.css'
 
 export default function CertificationsPage() {
-  const [activeCertification, setActiveCertification] = useState<
-    (typeof certifications)[number] | null
-  >(null)
+  const navigate = useNavigate()
 
   return (
-    <main className="certifications-page-shell">
+    <motion.main
+      className="certifications-page-shell"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.4, ease: 'easeOut' }}
+    >
       <div className="certifications-page-header">
         <div>
           <p className="section-label">Certificaciones</p>
@@ -18,19 +22,25 @@ export default function CertificationsPage() {
             Cada certificado con el mismo estilo refinado de la sección principal. Navega, explora y abre cualquiera para ver los detalles.
           </p>
         </div>
-        <a className="certifications-view-all certifications-back-link" href="./">
+        <button
+          type="button"
+          className="certifications-view-all certifications-back-link"
+          onClick={() => navigate('/')}
+        >
           Volver al portfolio
-        </a>
+        </button>
       </div>
 
       <div className="certifications-page-grid">
         {certifications.map((certification) => (
-          <button
+          <motion.button
             key={certification.slug}
             type="button"
             className="cert-page-card"
-            onClick={() => setActiveCertification(certification)}
+            onClick={() => navigate(`/certifications/${certification.slug}`)}
             aria-label={`Ver detalles de ${certification.title}`}
+            whileHover={{ y: -8, scale: 1.02 }}
+            transition={{ duration: 0.24, ease: 'easeOut' }}
           >
             <img className="cert-page-image" src={certification.image} alt={certification.title} />
             <div className="cert-page-body">
@@ -38,15 +48,9 @@ export default function CertificationsPage() {
               <h3>{certification.title}</h3>
               <p className="cert-page-duration">{certification.duration}</p>
             </div>
-          </button>
+          </motion.button>
         ))}
       </div>
-
-      <CertificationModal
-        certification={activeCertification}
-        open={Boolean(activeCertification)}
-        onClose={() => setActiveCertification(null)}
-      />
-    </main>
+    </motion.main>
   )
 }

@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import {
   SiHtml5,
@@ -35,14 +36,12 @@ function getTechIcon(tech: string) {
   return techIconMap[tech] || SiGithub
 }
 
-export default function CertificationDetail({ slug }: { slug: string }) {
-  const [certification, setCertification] = useState<Certification | null>(null)
-  const [currentIndex, setCurrentIndex] = useState(0)
-
-  useEffect(() => {
-    const cert = certifications.find((c) => c.slug === slug)
-    setCertification(cert || null)
-  }, [slug])
+export default function CertificationDetail() {
+  const { slug } = useParams<{ slug: string }>()
+  const navigate = useNavigate()
+  const [certification] = useState<Certification | null>(
+    certifications.find((c) => c.slug === slug) || null
+  )
 
   if (!certification) {
     return (
@@ -55,9 +54,9 @@ export default function CertificationDetail({ slug }: { slug: string }) {
       >
         <div className="certification-detail-loading">
           <p>Certificación no encontrada</p>
-          <a href="./certificaciones.html" className="back-button">
+          <button onClick={() => navigate('/')} className="back-button">
             ← Volver
-          </a>
+          </button>
         </div>
       </motion.div>
     )
@@ -77,9 +76,9 @@ export default function CertificationDetail({ slug }: { slug: string }) {
       transition={{ duration: 0.4, ease: 'easeOut' }}
     >
       <div className="certification-detail-header">
-        <a href="./certificaciones.html" className="back-button">
-          ← Volver a certificaciones
-        </a>
+        <button onClick={() => navigate('/')} className="back-button">
+          ← Volver al portfolio
+        </button>
       </div>
 
       <div className="certification-detail-container">
@@ -150,14 +149,20 @@ export default function CertificationDetail({ slug }: { slug: string }) {
 
           <div className="certification-detail-navigation">
             {previousCert && (
-              <a href={`./certificacion-${previousCert.slug}.html`} className="nav-button nav-button-prev">
+              <button
+                onClick={() => navigate(`/certifications/${previousCert.slug}`)}
+                className="nav-button nav-button-prev"
+              >
                 ← {previousCert.title}
-              </a>
+              </button>
             )}
             {nextCert && (
-              <a href={`./certificacion-${nextCert.slug}.html`} className="nav-button nav-button-next">
+              <button
+                onClick={() => navigate(`/certifications/${nextCert.slug}`)}
+                className="nav-button nav-button-next"
+              >
                 {nextCert.title} →
-              </a>
+              </button>
             )}
           </div>
         </motion.div>

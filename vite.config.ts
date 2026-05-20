@@ -22,7 +22,6 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, 'index.html'),
-        certifications: path.resolve(__dirname, 'certificaciones.html'),
       },
     },
   },
