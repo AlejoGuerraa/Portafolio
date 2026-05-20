@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useEffect } from 'react'
+import type { ComponentType } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import {
@@ -18,7 +19,7 @@ import type { Certification } from '../data/certifications'
 import { certifications } from '../data/certifications'
 import './Certifications.css'
 
-const techIconMap: Record<string, React.ComponentType<{ size?: number; color?: string }>> = {
+const techIconMap: Record<string, ComponentType<{ size?: number; color?: string }>> = {
   HTML: SiHtml5,
   CSS: SiCss,
   JavaScript: SiJavascript,
@@ -39,9 +40,11 @@ function getTechIcon(tech: string) {
 export default function CertificationDetail() {
   const { slug } = useParams<{ slug: string }>()
   const navigate = useNavigate()
-  const [certification] = useState<Certification | null>(
-    certifications.find((c) => c.slug === slug) || null
-  )
+  const certification = certifications.find((c) => c.slug === slug) || null
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [])
 
   if (!certification) {
     return (

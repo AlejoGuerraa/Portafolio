@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { certifications } from '../data/certifications'
@@ -5,6 +6,10 @@ import './Certifications.css'
 
 export default function CertificationsPage() {
   const navigate = useNavigate()
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [])
 
   return (
     <motion.main

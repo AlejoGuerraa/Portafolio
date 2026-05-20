@@ -52,6 +52,10 @@ export default function ProjectDetail() {
     return () => window.clearTimeout(timeout)
   }, [toast])
 
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [])
+
   const project = projects.find((p) => p.slug === slug)
   const projectIndex = projects.findIndex((p) => p.slug === slug)
   const previousProject = projectIndex > 0 ? projects[projectIndex - 1] : null
@@ -243,47 +247,10 @@ export default function ProjectDetail() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: 'easeOut', delay: 0.3 }}
         >
-          <div className="info-grid">
+          <div className="info-grid full-width">
             <div className="info-column">
               <h2 className="section-title">Descripción</h2>
               <p className="project-description">{project.longDescription}</p>
-            </div>
-
-            <div className="info-column">
-              <h2 className="section-title">Detalles</h2>
-
-              <div className="details-block">
-                <h3 className="detail-title">Tecnologías utilizadas</h3>
-                <div className="technologies-grid">
-                  {project.technologies.map((tech) => {
-                    const Icon = getTechIcon(tech)
-                    return (
-                      <div key={tech} className="tech-pill" title={tech}>
-                        <Icon size={24} color="currentColor" />
-                        <span>{tech}</span>
-                      </div>
-                    )
-                  })}
-                </div>
-              </div>
-
-              <div className="details-block">
-                <h3 className="detail-title">Participantes</h3>
-                <div className="participants-detailed">
-                  {project.participants.map((participant) => (
-                    <a
-                      key={participant.name}
-                      href={participant.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="participant-detailed-link"
-                    >
-                      <SiGithub size={16} />
-                      {participant.name}
-                    </a>
-                  ))}
-                </div>
-              </div>
             </div>
           </div>
         </motion.section>
