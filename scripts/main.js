@@ -171,6 +171,78 @@ function initProjectModals() {
   });
 }
 
+const contactForm = document.getElementById('contact-form');
+const contactName = document.getElementById('contact-name');
+const contactEmail = document.getElementById('contact-email');
+const contactMessage = document.getElementById('contact-message');
+const contactStatus = document.querySelector('.contact-status');
+
+function validateEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function updateContactStatus(message, status = '') {
+  if (!contactStatus) return;
+  contactStatus.textContent = message;
+  contactStatus.classList.toggle('success', status === 'success');
+  contactStatus.classList.toggle('error', status === 'error');
+}
+
+async function handleContactSubmit(event) {
+  event.preventDefault();
+  if (!contactForm || !contactName || !contactEmail || !contactMessage) return;
+
+  const name = contactName.value.trim();
+  const email = contactEmail.value.trim();
+  const message = contactMessage.value.trim();
+  const submitButton = contactForm.querySelector('.contact-submit');
+
+  if (!name || !email || !message) {
+    updateContactStatus('Completa todos los campos para enviar el mensaje.', 'error');
+    return;
+  }
+
+  if (!validateEmail(email)) {
+    updateContactStatus('Por favor ingresa un email válido.', 'error');
+    return;
+  }
+
+  if (submitButton) {
+    submitButton.disabled = true;
+    submitButton.textContent = 'Enviando...';
+  }
+  updateContactStatus('Enviando mensaje...', '');
+
+  try {
+    const response = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, email, message }),
+    });
+
+    if (!response.ok) {
+      const errorData = await response.json().catch(() => ({}));
+      updateContactStatus(errorData.error || 'No se pudo enviar el mensaje.', 'error');
+      return;
+    }
+
+    updateContactStatus('Mensaje enviado correctamente.', 'success');
+    contactForm.reset();
+  } catch (error) {
+    updateContactStatus('No se pudo enviar el mensaje. Intenta nuevamente.', 'error');
+  } finally {
+    if (submitButton) {
+      submitButton.disabled = false;
+      submitButton.textContent = 'Enviar mensaje';
+    }
+  }
+}
+
+function initContactForm() {
+  if (!contactForm) return;
+  contactForm.addEventListener('submit', handleContactSubmit);
+}
+
 function initCanvasBackground() {
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
@@ -254,6 +326,7 @@ function init() {
   typeAboutCode();
   initNavLinks();
   initProjectModals();
+  initContactForm();
   initCanvasBackground();
 
   techDots.forEach((dot) => {

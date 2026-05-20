@@ -129,46 +129,50 @@
             <h2>Hablemos</h2>
           </div>
           <div class="contact-grid fade-in-up">
-            <div class="contact-copy">
-              <p>Si te gustó mi trabajo y tenés alguna propuesta en mente, no dudes en escribirme. La consulta no molesta y trato de responder lo antes posible.</p>
+            <div class="contact-panel">
+              <div class="contact-copy">
+                <p>Si te gustó mi trabajo y tenés alguna propuesta en mente, escribime directamente y te respondo en breve.</p>
+              </div>
               <div class="contact-links">
-                <a class="ghost-link" href="https://github.com/AlejoGuerraa" target="_blank" rel="noreferrer">
-                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1s-1.74-.56-5.75 2.14A20.38 20.38 0 0 0 7 4.46c-4 2.7-5.75 2.14-5.75 2.14A5.07 5.07 0 0 0 1 4.77 5.44 5.44 0 0 0 .77 8.09c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 6.27 17.1V21"/>
+                <a class="contact-link" href="https://github.com/AlejoGuerraa" target="_blank" rel="noreferrer">
+                  <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2C7.589 2 4 5.589 4 10c0 3.527 2.292 6.52 5.47 7.57.4.074.544-.174.544-.386 0-.19-.007-.693-.01-1.36-2.225.483-2.695-1.073-2.695-1.073-.364-.924-.888-1.17-.888-1.17-.726-.497.055-.487.055-.487.803.056 1.226.825 1.226.825.713 1.222 1.87.87 2.325.666.072-.517.28-.87.508-1.07-1.776-.202-3.644-.888-3.644-3.955 0-.873.312-1.587.824-2.148-.083-.203-.357-1.02.078-2.125 0 0 .672-.215 2.2.82A7.64 7.64 0 0 1 12 6.845c.68.003 1.366.092 2.006.27 1.527-1.035 2.198-.82 2.198-.82.436 1.104.162 1.922.08 2.125.513.56.823 1.275.823 2.148 0 3.075-1.871 3.75-3.652 3.95.288.249.545.737.545 1.486 0 1.073-.01 1.938-.01 2.201 0 .214.143.463.55.384C17.71 16.52 20 13.527 20 10c0-4.411-3.589-8-8-8Z"/>
                   </svg>
-                  GitHub
+                  <span class="contact-copy-text"><span class="contact-copy-title">GitHub</span>AlejoGuerraa</span>
                 </a>
-                <a class="ghost-link" href="https://linkedin.com/in/alejo-guerra-inf" target="_blank" rel="noreferrer">
-                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M16 8a6 6 0 0 1 6 6v8h-4v-8a2 2 0 0 0-4 0v8h-4v-8a6 6 0 0 1 6-6z"/>
-                    <rect x="2" y="9" width="4" height="12" rx="1"/>
-                    <circle cx="4" cy="4" r="2"/>
+                <a class="contact-link" href="https://linkedin.com/in/alejo-guerra-inf" target="_blank" rel="noreferrer">
+                  <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16v16H4z" />
+                    <path d="M8 11.5v6.5" />
+                    <path d="M8 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+                    <path d="M12.25 16V12.5c0-1.2.98-2.18 2.18-2.18H17" />
                   </svg>
-                  LinkedIn
+                  <span class="contact-copy-text"><span class="contact-copy-title">LinkedIn</span>Alejo Guerra</span>
                 </a>
-                <a class="ghost-link" href="mailto:guerra.alejoet36@gmail.com">
-                  <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                    <path d="M4 5h16v14H4z"/>
-                    <polyline points="4 5 12 13 20 5"/>
+                <a class="contact-link" href="mailto:guerra.alejoet36@gmail.com">
+                  <svg class="contact-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="5" width="18" height="14" rx="2" />
+                    <path d="M3 7l9 6 9-6" />
                   </svg>
-                  guerra.alejoet36@gmail.com
+                  <span class="contact-copy-text"><span class="contact-copy-title">Email</span>guerra.alejoet36@gmail.com</span>
                 </a>
               </div>
             </div>
-            <form class="contact-form" action="#" onsubmit="return false;">
+            <form id="contact-form" class="contact-form" novalidate>
               <label>
                 Nombre y apellido
-                <input type="text" placeholder="Tu nombre completo" />
+                <input id="contact-name" name="name" type="text" placeholder="Tu nombre completo" required />
               </label>
               <label>
                 Email
-                <input type="email" placeholder="tu@correo.com" />
+                <input id="contact-email" name="email" type="email" placeholder="tu@correo.com" required />
               </label>
               <label>
                 Mensaje
-                <textarea rows="5" placeholder="Escribe tu propuesta aquí"></textarea>
+                <textarea id="contact-message" name="message" rows="5" placeholder="Escribe tu propuesta aquí" required></textarea>
               </label>
-              <button class="button button-primary" type="submit">Enviar mensaje</button>
+              <div class="contact-status" aria-live="polite"></div>
+              <button class="button button-primary contact-submit" type="submit">Enviar mensaje</button>
             </form>
           </div>
         </section>
