@@ -214,15 +214,14 @@ async function handleContactSubmit(event) {
   updateContactStatus('Enviando mensaje...', '');
 
   try {
-    const response = await fetch('/api/contact', {
+    const response = await fetch('https://formsubmit.co/ajax/guerra.alejoet36@gmail.com', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ name, email, message }),
     });
 
     if (!response.ok) {
-      const errorData = await response.json().catch(() => ({}));
-      updateContactStatus(errorData.error || 'No se pudo enviar el mensaje.', 'error');
+      updateContactStatus('No se pudo enviar el mensaje. Intenta nuevamente.', 'error');
       return;
     }
 

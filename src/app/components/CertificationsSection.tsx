@@ -11,8 +11,7 @@ export default function CertificationsSection() {
     <section className="certifications-shell" aria-labelledby="certifications-heading">
       <div className="certifications-header">
         <div>
-          <p className="section-label">Certificaciones</p>
-          <h2 id="certifications-heading">Reconocimientos recientes</h2>
+          <p className="section-label">Certificaciones y reconocimientos</p>
         </div>
         <button
           type="button"
