@@ -16,6 +16,7 @@ import {
   SiUnity,
   SiGit,
   SiCanva,
+  
 } from 'react-icons/si'
 
 import './TechStackSection.css'
@@ -36,22 +37,7 @@ interface TechGroup {
   items: TechItem[]
 }
 
-const JavaIcon = ({ size = 24, color = 'currentColor' }: { size?: number; color?: string }) => (
-  <svg viewBox="0 0 24 24" width={size} height={size} aria-hidden="true" fill="none">
-    <path d="M6.5 18c0-4.5 5.5-4.8 5.5-9.2" stroke={color} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M8 14.2c1.2-1.1 3.6-1.2 4.4-3" stroke={color} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-    <path d="M12 19s1.2-0.8 2-2" stroke={color} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
-    <rect x="6" y="17" width="12" height="2" rx="1" fill={color} opacity="0.06" />
-  </svg>
-)
-
-const CSharpIcon = ({ size = 24, color = 'currentColor' }: { size?: number; color?: string }) => (
-  <svg viewBox="0 0 24 24" width={size} height={size} aria-hidden="true" fill="none">
-    <path d="M8 7h6M8 11h5M8 15h6" stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-    <circle cx="18" cy="7.5" r="3.2" stroke={color} strokeWidth="1.6" />
-    <text x="16.6" y="8.4" fill={color} fontSize="6" fontWeight="700">#</text>
-  </svg>
-)
+// Use the official simple icons from react-icons for Java and C# for consistency
 
 const techGroups: TechGroup[] = [
   {
@@ -122,6 +108,22 @@ const otherTechnologies = [
   { name: 'PowerPoint', Icon: PowerPointIcon, color: '#D24726' },
 ]
 
+// Inline fallback icons for Java and C# (avoid depending on missing exports in react-icons)
+const JavaIcon = ({ size = 24, color = '#5382A1' }: { size?: number; color?: string }) => (
+  <svg viewBox="0 0 24 24" width={size} height={size} aria-hidden="true">
+    <rect x="2" y="2" width="20" height="20" rx="4" fill={color} />
+    <path d="M8 9s2-1 4-1 4 1 4 1-1 1-4 1-4-1-4-1z" fill="#fff" opacity="0.9" />
+    <path d="M7.5 12.5c1.2.8 3 1 4.5 1s3.3-.2 4.5-1" stroke="#fff" strokeWidth="0.9" fill="none" strokeLinecap="round" />
+  </svg>
+)
+
+const CSharpIcon = ({ size = 24, color = '#9B62FF' }: { size?: number; color?: string }) => (
+  <svg viewBox="0 0 24 24" width={size} height={size} aria-hidden="true">
+    <rect x="2" y="2" width="20" height="20" rx="4" fill={color} />
+    <text x="50%" y="55%" textAnchor="middle" fontSize="10" fill="#fff" fontFamily="Arial, Helvetica, sans-serif">C#</text>
+  </svg>
+)
+
 function TechBadge({ item }: { item: TechItem }) {
   return (
     <SimpleTooltip
@@ -149,10 +151,12 @@ function TechBadge({ item }: { item: TechItem }) {
 export default function TechStackSection() {
   return (
       <section className="tech-section" aria-labelledby="tech-section-title">
+        <div className="section-header">
+          <h2 id="tech-section-title">Tech Stack</h2>
+        </div>
         <div className="tech-headline">
           <div>
-            <p className="section-description">
-            </p>
+            <p className="section-description"></p>
           </div>
         </div>
 

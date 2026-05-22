@@ -32,7 +32,7 @@ export const projects: Project[] = [
     duration: 'Mayo - Junio (2026)',
     github: 'https://github.com/AlejoGuerraa/Aquanova',
     deploy: 'https://aquanova-three.vercel.app',
-    images: ['/assets/images/proyectos/Aquanova/Portada.jpeg'],
+    images: ['/assets/images/Proyectos/Aquanova/Portada.jpeg'],
   },
   {
     slug: 'campuscore',
@@ -45,7 +45,7 @@ export const projects: Project[] = [
     duration: 'Octubre - Diciembre (2025)',
     github: 'https://github.com/AlejoGuerraa/CampuScore',
     deploy: 'https://campuscore-gilt.vercel.app/',
-    images: ['/assets/images/proyectos/CampuScore/Portada.png'],
+    images: ['/assets/images/Proyectos/CampuScore/Portada.png'],
   },
   {
     slug: 'chatbot',
@@ -58,7 +58,7 @@ export const projects: Project[] = [
     participants: [{ name: 'Alejo Guerra', github: 'https://github.com/AlejoGuerraa' }],
     duration: 'Marzo - Julio (2025)',
     github: 'https://github.com/AlejoGuerraa/Chat-bot',
-    images: ['/assets/images/proyectos/Chatbot/Portada.png'],
+    images: ['/assets/images/Proyectos/Chatbot/Portada.png'],
   },
   {
     slug: 'ipvision',
@@ -73,9 +73,9 @@ export const projects: Project[] = [
     github: 'https://github.com/AlejoGuerraa/IPVision',
     download: '/assets/ejecutables/IPVision.jar',
     images: [
-      '/assets/images/proyectos/IPVision/Portada.png',
-      '/assets/images/proyectos/IPVision/Inicio 1.JPG',
-      '/assets/images/proyectos/IPVision/Resultados 1.JPG',
+      '/assets/images/Proyectos/IPVision/Portada.png',
+      '/assets/images/Proyectos/IPVision/Inicio 1.JPG',
+      '/assets/images/Proyectos/IPVision/Resultados 1.JPG',
     ],
   },
   {
@@ -94,7 +94,7 @@ export const projects: Project[] = [
     ],
     duration: 'Abril - En proceso (2026)',
     github: 'https://github.com/Santino7537/Knowbeat',
-    images: ['/assets/images/proyectos/KnowBeat/Portada.png'],
+    images: ['/assets/images/Proyectos/KnowBeat/Portada.png'],
   },
   {
     slug: 'nextread',
@@ -113,7 +113,7 @@ export const projects: Project[] = [
     ],
     duration: 'Julio - Noviembre (2026)',
     github: 'https://github.com/AlejoGuerraa/nextRead',
-    images: ['/assets/images/proyectos/NextRead/Portada.png'],
+    images: ['/assets/images/Proyectos/NextRead/Portada.png'],
   },
   {
     slug: 'tubuffet',
@@ -129,7 +129,7 @@ export const projects: Project[] = [
     ],
     duration: 'Abril - En proceso (2026)',
     github: 'https://github.com/Renaaa189/TuBuffet',
-    images: ['/assets/images/proyectos/TuBuffet/Portada.png'],
+    images: ['/assets/images/Proyectos/TuBuffet/Portada.png'],
   },
 ]
 

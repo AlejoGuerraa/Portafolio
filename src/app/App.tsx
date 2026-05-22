@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import TechStackSection from './components/TechStackSection'
 import ProjectsSection from './components/ProjectsSection'
@@ -27,7 +27,7 @@ export default function App() {
   window.__AppRendered = true
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <AnimatePresence mode="wait">
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -37,6 +37,6 @@ export default function App() {
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </AnimatePresence>
-    </BrowserRouter>
+      </HashRouter>
   )
 }

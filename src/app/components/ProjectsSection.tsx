@@ -10,6 +10,9 @@ export default function ProjectsSection() {
 
   return (
     <div className="projects-shell">
+      <div className="section-header">
+        <p className="section-label">Mis proyectos</p>
+      </div>
       <div className="projects-grid">
         {projects.map((project) => (
           <motion.article
@@ -28,7 +31,9 @@ export default function ProjectsSection() {
             </button>
             <div className="project-content">
               <div>
-                <p className="project-label">Proyecto destacado</p>
+                {['nextread', 'ipvision', 'tubuffet', 'knowbeat'].includes(project.slug) && (
+                  <p className="project-label">Proyecto destacado</p>
+                )}
                 <h3>{project.title}</h3>
                 <p className="project-description">{project.shortDescription}</p>
               </div>
