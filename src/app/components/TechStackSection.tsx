@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { motion } from 'framer-motion'
 import SimpleTooltip from './SimpleTooltip'
 import {
@@ -38,6 +38,21 @@ interface TechGroup {
 }
 
 // Use the official simple icons from react-icons for Java and C# for consistency
+
+const JavaIcon = ({ size = 24, color = '#5382A1' }: { size?: number; color?: string }) => (
+  <svg viewBox="0 0 24 24" width={size} height={size} aria-hidden="true">
+    <rect x="2" y="2" width="20" height="20" rx="4" fill={color} />
+    <path d="M8 9s2-1 4-1 4 1 4 1-1 1-4 1-4-1-4-1z" fill="#fff" opacity="0.9" />
+    <path d="M7.5 12.5c1.2.8 3 1 4.5 1s3.3-.2 4.5-1" stroke="#fff" strokeWidth="0.9" fill="none" strokeLinecap="round" />
+  </svg>
+)
+
+const CSharpIcon = ({ size = 24, color = '#9B62FF' }: { size?: number; color?: string }) => (
+  <svg viewBox="0 0 24 24" width={size} height={size} aria-hidden="true">
+    <rect x="2" y="2" width="20" height="20" rx="4" fill={color} />
+    <text x="50%" y="55%" textAnchor="middle" fontSize="10" fill="#fff" fontFamily="Arial, Helvetica, sans-serif">C#</text>
+  </svg>
+)
 
 const techGroups: TechGroup[] = [
   {
@@ -107,22 +122,6 @@ const otherTechnologies = [
   { name: 'Excel', Icon: ExcelIcon, color: '#217346' },
   { name: 'PowerPoint', Icon: PowerPointIcon, color: '#D24726' },
 ]
-
-// Inline fallback icons for Java and C# (avoid depending on missing exports in react-icons)
-const JavaIcon = ({ size = 24, color = '#5382A1' }: { size?: number; color?: string }) => (
-  <svg viewBox="0 0 24 24" width={size} height={size} aria-hidden="true">
-    <rect x="2" y="2" width="20" height="20" rx="4" fill={color} />
-    <path d="M8 9s2-1 4-1 4 1 4 1-1 1-4 1-4-1-4-1z" fill="#fff" opacity="0.9" />
-    <path d="M7.5 12.5c1.2.8 3 1 4.5 1s3.3-.2 4.5-1" stroke="#fff" strokeWidth="0.9" fill="none" strokeLinecap="round" />
-  </svg>
-)
-
-const CSharpIcon = ({ size = 24, color = '#9B62FF' }: { size?: number; color?: string }) => (
-  <svg viewBox="0 0 24 24" width={size} height={size} aria-hidden="true">
-    <rect x="2" y="2" width="20" height="20" rx="4" fill={color} />
-    <text x="50%" y="55%" textAnchor="middle" fontSize="10" fill="#fff" fontFamily="Arial, Helvetica, sans-serif">C#</text>
-  </svg>
-)
 
 function TechBadge({ item }: { item: TechItem }) {
   return (
