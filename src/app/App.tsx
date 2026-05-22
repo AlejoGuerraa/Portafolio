@@ -1,4 +1,4 @@
-import { HashRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import TechStackSection from './components/TechStackSection'
 import ProjectsSection from './components/ProjectsSection'
@@ -30,13 +30,12 @@ export default function App() {
     <HashRouter>
       <AnimatePresence mode="wait">
         <Routes>
-          <Route path="/" element={<HomePage />} />
           <Route path="/projects/:slug" element={<ProjectDetail />} />
           <Route path="/certifications" element={<CertificationsPage />} />
           <Route path="/certifications/:slug" element={<CertificationDetail />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="*" element={<HomePage />} />
         </Routes>
       </AnimatePresence>
-      </HashRouter>
+    </HashRouter>
   )
 }

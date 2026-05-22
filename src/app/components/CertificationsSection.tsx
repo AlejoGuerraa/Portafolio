@@ -8,10 +8,10 @@ export default function CertificationsSection() {
   const trackItems = useMemo(() => [...certifications, ...certifications], [])
 
   return (
-    <section className="certifications-shell" aria-labelledby="certifications-heading">
+    <section className="section certifications-shell" id="certifications" aria-labelledby="certifications-heading">
       <div className="certifications-header">
         <div>
-          <p className="section-label">Certificaciones y reconocimientos</p>
+          <h2 className="section-label" id="certifications-heading">Certificaciones y reconocimientos</h2>
         </div>
         <button
           type="button"

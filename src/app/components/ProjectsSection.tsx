@@ -9,9 +9,9 @@ export default function ProjectsSection() {
   const navigate = useNavigate()
 
   return (
-    <div className="projects-shell">
+      <section className="section projects-shell" id="projects" aria-labelledby="projects-heading">
       <div className="section-header">
-        <p className="section-label">Mis proyectos</p>
+        <h2 className="section-label" id="projects-heading">Mis proyectos</h2>
       </div>
       <div className="projects-grid">
         {projects.map((project) => (
@@ -60,6 +60,6 @@ export default function ProjectsSection() {
           </motion.article>
         ))}
       </div>
-    </div>
+    </section>
   )
 }

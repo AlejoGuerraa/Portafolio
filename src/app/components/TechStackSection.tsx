@@ -150,7 +150,7 @@ function TechBadge({ item }: { item: TechItem }) {
 
 export default function TechStackSection() {
   return (
-      <section className="tech-section" aria-labelledby="tech-section-title">
+      <section className="tech-section" id="tech" aria-labelledby="tech-section-title">
         <div className="section-header">
           <h2 id="tech-section-title">Tech Stack</h2>
         </div>
