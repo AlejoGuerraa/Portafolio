@@ -44,7 +44,7 @@ export default function ProjectsSection() {
                   className="project-button"
                   onClick={() => navigate(`/projects/${project.slug}`)}
                 >
-                  Visitar
+                  Ver Detalles
                 </button>
                 <a
                   className="project-icon-button"

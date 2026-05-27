@@ -153,7 +153,7 @@ export default function ProjectDetail() {
                 )}
                 <button onClick={handleGitHub} className="project-button secondary">
                   <SiGithub size={18} />
-                  GitHub
+                  Repositorio
                 </button>
               </div>
 
