@@ -5,8 +5,17 @@ import { SiGithub } from 'react-icons/si'
 import { projects } from '../data/projects'
 import './ProjectsSection.css'
 
+const featuredProjects = ['nextread', 'ipvision', 'tubuffet', 'knowbeat']
+
 export default function ProjectsSection() {
   const navigate = useNavigate()
+  const sortedProjects = [...projects].sort((a, b) => {
+    const aFeatured = featuredProjects.includes(a.slug)
+    const bFeatured = featuredProjects.includes(b.slug)
+
+    if (aFeatured === bFeatured) return 0
+    return aFeatured ? -1 : 1
+  })
 
   return (
       <section className="section projects-shell" id="projects" aria-labelledby="projects-heading">
@@ -14,7 +23,7 @@ export default function ProjectsSection() {
         <h2 className="section-label" id="projects-heading">Mis proyectos</h2>
       </div>
       <div className="projects-grid">
-        {projects.map((project) => (
+        {sortedProjects.map((project) => (
           <motion.article
             key={project.slug}
             className="project-card"

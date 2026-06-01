@@ -232,7 +232,8 @@ textarea {
   color: var(--accent);
   text-transform: uppercase;
   letter-spacing: 0.25em;
-  font-size: 0.77rem;
+  font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+  font-weight: 700;
 }
 
 .hero {
@@ -550,6 +551,12 @@ textarea {
 
 .highlight {
   color: #e4e4ff;
+}
+
+body.hide-home-sections #hero,
+body.hide-home-sections #about,
+body.hide-home-sections #contact {
+  display: none !important;
 }
 
 .nav-links a.active {

@@ -47,21 +47,22 @@ export function ContactForm(): React.ReactElement {
   };
 
   // Handle form submission
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     // Validate required fields
     if (!state.data.name.trim()) {
+      e.preventDefault();
       setState((prev) => ({ ...prev, error: 'El nombre es obligatorio' }));
       return;
     }
 
     if (!state.data.email.trim()) {
+      e.preventDefault();
       setState((prev) => ({ ...prev, error: 'El email es obligatorio' }));
       return;
     }
 
     if (!state.data.message.trim()) {
+      e.preventDefault();
       setState((prev) => ({ ...prev, error: 'El mensaje es obligatorio' }));
       return;
     }
@@ -69,12 +70,14 @@ export function ContactForm(): React.ReactElement {
     // Basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(state.data.email)) {
+      e.preventDefault();
       setState((prev) => ({ ...prev, error: 'El email no es válido' }));
       return;
     }
 
     // Check message length
     if (state.data.message.trim().length < 10) {
+      e.preventDefault();
       setState((prev) => ({
         ...prev,
         error: 'El mensaje debe tener al menos 10 caracteres',
@@ -82,51 +85,25 @@ export function ContactForm(): React.ReactElement {
       return;
     }
 
-    setState((prev) => ({ ...prev, loading: true, error: '' }));
-
-    try {
-      const response = await fetch('https://formsubmit.co/ajax/6c45e88acc80458cf593824949cee70c ', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          ...state.data,
-          _subject: 'Nuevo mensaje desde el portfolio',
-          _template: 'table',
-          _captcha: 'false',
-        }),
-      });
-
-      if (!response.ok) {
-        const errorData = await response.json().catch(() => ({}));
-        throw new Error(errorData.message || 'Error al enviar el mensaje');
-      }
-
-      const successData = await response.json().catch(() => null);
-      if (successData && successData.success === false) {
-        throw new Error(successData.message || 'No se pudo enviar el mensaje');
-      }
-
-      setState((prev) => ({
-        ...prev,
-        loading: false,
-        success: true,
-        data: { name: '', email: '', message: '' },
-      }));
-
-      resetState();
-    } catch (err) {
-      const errorMessage =
-        err instanceof Error ? err.message : 'No se pudo enviar el mensaje';
-      setState((prev) => ({
-        ...prev,
-        loading: false,
-        error: errorMessage,
-      }));
-    }
+    setState((prev) => ({ ...prev, error: '' }));
   };
 
   return (
-    <form className="contact-form" onSubmit={handleSubmit}>
+    <form
+      className="contact-form"
+      action="https://formsubmit.co/guerra.alejoet36@gmail.com"
+      method="POST"
+      acceptCharset="UTF-8"
+      onSubmit={handleSubmit}
+    >
+      <input type="hidden" name="_subject" value="Nuevo mensaje desde el portfolio" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input
+        type="hidden"
+        name="_next"
+        value={typeof window !== 'undefined' ? window.location.href : 'http://localhost:5173'}
+      />
       <div className="form-group">
         <label htmlFor="name" className="form-label">
           Nombre

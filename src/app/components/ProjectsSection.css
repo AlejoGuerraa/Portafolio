@@ -62,11 +62,18 @@
 }
 
 .project-label {
-  margin: 0 0 0.6rem;
-  color: rgba(255, 255, 255, 0.62);
+  display: inline-flex;
+  align-items: center;
+  margin: 0 0 0.75rem;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  color: #ffffff;
   font-size: 0.78rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 10px 24px rgba(255, 255, 255, 0.04);
 }
 
 .project-content h3 {
