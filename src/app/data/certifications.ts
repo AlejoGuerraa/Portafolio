@@ -91,4 +91,24 @@ export const certifications: Certification[] = [
     technologies: [],
     image: '/assets/images/Certificados/Diploma Alejo Guerra - Computación Cuántica.jpg',
   },
+  {
+    slug: 'desarrollo-ia-agentes',
+    title: 'Desarrollo de IA con agentes',
+    company: 'Big School - MoureDev',
+    description:
+      'Certificación de participación en el curso de inteligencia artificial con agentes. Donde aprendí sobre como usar la IA para crear agentes inteligentes y su uso en la programación actual.',
+    duration: '6 horas',
+    technologies: ['Claude','ChatGPT','Cursor'],
+    image: '/assets/images/Certificados/Diploma Alejo Guerra - Desarrollo IA.jpg',
+  },
+  {
+    slug: 'desafio-intec',
+    title: 'Desafio Intec IA',
+    company: 'Intec',
+    description:
+      'Certificación de participación en un desafio realizado en la expo "Empujar", donde se aplicaron conocimientos de Inteligencia Artificial para resolver problemas prácticos de la compañia',
+    duration: '1 hora',
+    technologies: [],
+    image: '/assets/images/Certificados/Diploma Alejo Guerra - Desafio intec.jpg',
+  },
 ]
